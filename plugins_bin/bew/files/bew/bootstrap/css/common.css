@@ -1,0 +1,60 @@
+body {
+    margin-top: 125px; /* adjust this if the height of the menu bar changes */
+}
+
+.nav {
+    margin-top: 28px; /* this is a faux center fix for the nav options - adjust this if you wish to change the logo height or the font of the menu items */
+}
+
+.logo{
+    height: 60px;
+}
+
+table.dataTable {
+    position: relative;
+    top: 42px;
+
+}
+
+.dataTables_length select,input
+{
+    color:#000;
+}
+
+body > div.navbar.navbar-inverse.navbar-fixed-top > div > div.navbar-header > a{
+    padding: 4px 0px 0px 10px;
+}
+
+.grayscale {-webkit-filter: grayscale(100%);}
+
+.spanColorReport {
+	padding: 4px 40px;
+	position: relative;
+	top: 7px;
+}
+
+.noPaint.table-striped>tbody>tr:nth-child(odd)>td, .noPaint.table-striped>tbody>tr:nth-child(odd)>th  {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+
+.navbar-text{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	margin: auto;
+	color: #D2D2D2 !important;
+	display: inline-block;
+	font-family: WOL_SB, 'Segoe UI Semibold', 'Segoe UI', Tahoma, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	height: 15px;
+	letter-spacing: 1px;
+}
+
+.dataTables_wrapper{ clear:both}
+
+.white{
+	color: #FFFFFF !important;
+}

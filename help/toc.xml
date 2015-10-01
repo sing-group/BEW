@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN"
+		"http://java.sun.com/products/javahelp/toc_2_0.dtd">
+
+<toc version="2.0">
+	<tocitem text="AIBench Help">
+		<tocitem target="top" text="Welcome to AIBench Help!" />
+		
+		<tocitem text="Datatypes">
+			<tocitem text="Result Datatype" target="datatype.result"/>
+		</tocitem>
+		
+		<tocitem text="Operations">
+			<tocitem text="Depends Sum Operation" target="operation.depends.sum"/>
+		</tocitem>
+		
+		<tocitem text="Views">
+			<tocitem text="Result View" target="view.depends.result"/>
+		</tocitem>
+	</tocitem>
+</toc>

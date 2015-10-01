@@ -1,0 +1,19 @@
+antimicrobial agent
+atmosphere
+biofilm component
+depth
+device
+flow velocity
+gene expression
+lifestyle
+material
+medium
+metacondition
+organism
+oxygen condition
+pH
+repetitions
+scientific control
+shear force
+temperature
+time

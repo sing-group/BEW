@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+                     "http://java.sun.com/products/javahelp/map_2_0.dtd">
+
+<map version="2.0">
+     <mapID target="top" url="HTML/index.html" />
+     <mapID target="view.depends.result" url="HTML/View.html"/>
+     <mapID target="operation.depends.sum" url="HTML/Operation.html"/>
+     <mapID target="datatype.result" url="HTML/Datatype.html"/>
+</map>

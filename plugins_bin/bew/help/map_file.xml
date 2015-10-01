@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!DOCTYPE map
+PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 2.0//EN"
+"http://java.sun.com/products/javahelp/map_2_0.dtd">
+<map version="2.0">
+	<mapID target="index" url="html/index.html"/>
+	<mapID target="mainMenu" url="html/mainMenu.html"/>
+	<mapID target="createIntra" url="html/createIntra.html"/>
+	<mapID target="editIntra" url="html/editIntra.html"/>
+	<mapID target="deleteIntra" url="html/deleteIntra.html"/>
+	<mapID target="displayIntra" url="html/displayIntra.html"/>
+	<mapID target="saveExp" url="html/saveExp.html"/>
+	<mapID target="loadExp" url="html/loadExp.html"/>
+	<mapID target="exportExp" url="html/exportExp.html"/>
+	<mapID target="importExp" url="html/importExp.html"/>
+	<mapID target="addMethod" url="html/addMethod.html"/>
+	<mapID target="editMethod" url="html/editMethod.html"/>
+	<mapID target="deleteMethod" url="html/deleteMethod.html"/>
+	<mapID target="displayMethod" url="html/displayMethod.html"/>
+	<mapID target="displayDS" url="html/displayDataSerie.html"/>
+	<mapID target="displayMethodCond" url="html/displayMethodCondition.html"/>	
+	<mapID target="createPlot" url="html/createPlot.html"/>
+	<mapID target="editPlot" url="html/editPlot.html"/>
+	<mapID target="deletePlot" url="html/deletePlot.html"/>
+	<mapID target="displayPlot" url="html/displayPlot.html"/>
+	<mapID target="savePlot" url="html/savePlot.html"/>
+	<mapID target="printPlot" url="html/printPlot.html"/>
+	<mapID target="createTest" url="html/createTest.html"/>
+	<mapID target="deleteTest" url="html/deleteTest.html"/>
+	<mapID target="displayTest" url="html/displayTest.html"/>
+	<mapID target="saveTest" url="html/saveTest.html"/>
+	<mapID target="compareIntra" url="html/compareIntra.html"/>
+	<mapID target="addCond" url="html/addCond.html"/>
+	<mapID target="addCondValue" url="html/addCondValue.html"/>
+	<mapID target="manageMethods" url="html/manageMethods.html"/>
+	<mapID target="updateBio" url="html/updateBio.html"/>
+	<mapID target="updateR" url="html/updateR.html"/>
+	<mapID target="downloadExp" url="html/downloadExp.html"/>
+	<mapID target="uploadExp" url="html/uploadExp.html"/>
+	<mapID target="generateReport" url="html/generateReport.html"/>
+	<mapID target="help" url="html/help.html"/>
+	<mapID target="about" url="html/about.html"/>
+	<mapID target="xls" url="html/xlsStructure.html"/>
+</map>

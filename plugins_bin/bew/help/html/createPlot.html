@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>BEW - Create Plot</title>
+</head>
+<body>
+	<h3>
+		<a id="createPlot" title="createPlot">2.1 Create plot</a>
+	</h3>
+	<div>
+        <p>This option becomes available as soon as there is at least one experiment with analytical results associated (method objects).</p>
+        <p>
+            To create a plot the user should indicate the experiment and specifically, the method of analysis, to be considered. 
+            Then, the user should choose the type of the plot to be constructed.
+        </p>
+        <div class="centered">
+            <p>
+                <img alt="addPlot" src="imgs/addPlot.png" class="small"/>
+            </p>
+        </div>
+        <p>There are two types of plots in BEW:</p>
+        <ul>
+            <li><b><i>Bar chart</i></b> -&gt; Plot with bars. The most common type
+                in plot data reporting.</li>
+            <li><b><i>Point chart</i></b> -&gt; Also known as ScatterPlot. This plot
+                requires a condition time in the method.</li>
+        </ul>
+        <div class="centered">
+            <p>
+                <img alt="addPlot2" src="imgs/addPlot2.png"/>
+            </p>
+        </div>
+        <p>
+            While specifying the data series in the plot, the user is presented with a window divided into 3 areas or
+            fields. They are listed below:
+        </p>
+        <ol>
+            <li><b><i>Method table</i></b>
+                <p>
+                    The user must select
+                    the data to be plotted. Keep in mind that it is mandatory that
+                    both data and conditions are selected. The user must select all the condition
+                    values belonging to the same parent. Below is, an example of an erroneous selection:
+                </p> 
+                <div class="centered">
+                    <p>
+                        <img alt="addPlot3_Invalid" src="imgs/addPlot3_Invalid.png"/>
+                    </p>
+                </div>
+                <p>
+                    The figure shows the selection of the copper, *stainless steel* and polyvinyl chloride condition
+                    from different parents (*escherichia coli*#2 and *escherichia coli*#4, in organism and *shear force* condition). 
+                    The correct selection would be:
+                </p> 
+                <div class="centered">
+                    <p>
+                        <img alt="addPlot3_Valid" src="imgs/addPlot3_Valid.png"/>
+                    </p>
+                </div>
+                <p>
+                    When the user selects the data correctly.
+                </p>
+            </li>
+            <li><b><i>Plot design</i></b>
+                <p>
+                    The Plot Design field is filled with
+                    the selected data, distributing them between the 2 lists. If the
+                    user sees that these are correct, he must press the button
+                    Create Plot.
+                </p>
+            </li>
+            <li><b><i>Plot preview</i></b>
+                <p>
+                    Once done, a preview
+                    of the chart is created in the field Plot Preview. 
+                    If the preview is correct the user may press the
+                    Ok button to add it to the method
+                    (Note: If the Cancel button is pressed, the plot is not
+                    stored).
+                </p>
+            </li>
+        </ol>
+        <p>
+            Note: For time plots the procedure is the same. The only
+            difference is that if the method has several time conditions, the
+            user may, once the plot is previewed, move the time columns in
+            the method table to change the axes of the chart.
+        </p>
+    </div>
+	<hr width="50%">
+
+	<a href="index.html">Return to the index page</a>
+</body>
+</html>

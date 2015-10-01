@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>BEW - Java Help</title>
+</head>
+<body>
+    <h3>
+        <a id="xlsStructure" title="xlsStructure">5.1 XLS files structure</a>
+    </h3>
+    <div>
+        <p>
+            XLS files need to have a correct structure to import them in BEW. 
+            The files need two mandatory sheets listed below.
+        </p>
+        <div class="centered">
+            <p>
+                <img alt="bewHelp" src="imgs/sheetsExample.png" class="small"/>
+            </p>
+        </div>
+        <ol>
+            <li>
+                Experiment Setup: In this sheet the user has to put the experiment basic information. The 
+                fields are shown in the image below and all of them are self-explanatory.
+
+                <div class="centered">
+                    <p>
+                        <img alt="bewHelp" src="imgs/setupSheet.png" class="small"/>
+                    </p>
+                </div>
+
+                If the user doesn't know the BiofOmics ID of the experiment he must leave the cell blank.
+            </li>
+            <li>
+                Constant Conditions: In this sheet the user has to put the experiment constant conditions (if applicable) like in the 
+                image below.
+
+                <div class="centered">
+                    <p>
+                        <img alt="bewHelp" src="imgs/constantSheet.png" class="small"/>
+                    </p>
+                </div>
+
+                The first column is for condition name, second column is for condition values and third column is for condition units.
+            </li>
+        </ol>
+        <p>
+            Besides the mandatory sheets, the user can create optional sheets for methods of analysis. The user can create from 0 to N methods per file.
+            For this example, the user created one method called PNA FISH. The structure of this sheet is as follow:
+        </p>
+        <div class="centered">
+            <p>
+                <img alt="bewHelp" src="imgs/methodSheet.png" class="small"/>
+            </p>
+        </div>
+        <ul>
+            <li>
+                The first row is used to indicate the units of the method.
+            </li>
+            <li>
+                The second row is used to indicate the number of conditions in this method. In the example, the method has 3 conditions.
+            </li>
+            <li>
+                The third row is used to indicate the name of the conditions in the method. 
+                As the user indicates that there are 3 conditions in the second row, three different names appear here.
+                If the user doesn't know the name of a condition he can leave the cell blank.
+            </li>
+            <li>
+                The following rows are used to indicate the values of the method.
+            </li>
+        </ul>
+    </div>
+	<hr width="50%">
+
+	<a href="index.html">Return to the index page</a>
+</body>
+</html>

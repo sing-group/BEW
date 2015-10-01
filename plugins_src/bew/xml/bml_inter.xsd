@@ -1,0 +1,99 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/bml_inter"
+	targetNamespace="http://www.example.org/bml_inter"
+	elementFormDefault="unqualified">
+	<element name="bml_inter" type="tns:bml_inter" />
+	<complexType name="bml_inter">
+		<sequence>
+			<element name="interExperiment" type="tns:interExperiment" minOccurs="1"
+				maxOccurs="unbounded"
+				/>
+		</sequence>
+	</complexType>
+	<complexType name="interExperiment">
+		<sequence>
+			<element name="authors" type="string" />
+			<element name="notes" type="string" />
+			<element name="comparedIntraExp" type="tns:comparedIntraExp"/>
+			<element name="comparedMethod" type="tns:comparedMethod" />
+			<element name="constantConditions" type="tns:constantConditions" />
+		</sequence>
+		<attribute name="experimentName" type="string" use="required" />
+		<attribute name="organization" type="string" use="required" />
+		<attribute name="contact" type="string" use="required" />
+		<attribute name="date" type="string" use="required"/>
+		<attribute name="publication" type="string" use="required"/>
+		<attribute name="bioID" type="string" use="required"/>
+	</complexType>
+	<complexType name="comparedIntraExp">
+		<sequence>
+			<element name="intraExperiment" type="tns:intraExperiment" minOccurs="2" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="intraExperiment">
+		<sequence>
+			<element name="authors" type="string" />
+			<element name="notes" type="string" />
+			<element name="intraConstantConditions" type="tns:constantConditions" />
+			<element name="dataSerieRows" type="string"/>
+			<element name="color" type="string" />
+		</sequence>
+		<attribute name="experimentName" type="string" use="required" />
+		<attribute name="organization" type="string" use="required" />
+		<attribute name="contact" type="string" use="required" />
+		<attribute name="date" type="string" use="required"/>
+		<attribute name="publication" type="string" use="required"/>
+		<attribute name="bioID" type="string" use="required"/>
+	</complexType>
+	<complexType name="comparedMethod">
+		<sequence>
+			<element name="method" type="tns:method" minOccurs="1"
+				maxOccurs="1" />
+		</sequence>
+	</complexType>
+	<complexType name="method">
+		<sequence>
+			<element name="conditions" type="tns:conditions" minOccurs="0" />
+			<element name="dataSeriesSet" type="tns:dataSeriesSet" />
+		</sequence>
+		<attribute name="methodName" type="string" use="required" />
+		<attribute name="methodUnits" type="string" use="optional" />
+	</complexType>
+	<complexType name="conditions">
+		<sequence>
+			<element name="condition" type="tns:condition" maxOccurs="unbounded"
+				minOccurs="0"
+				/>
+		</sequence>
+	</complexType>
+	<complexType name="dataSeriesSet">
+		<sequence>
+			<element name="dataSerie" type="tns:dataSerie" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="condition">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="conditionName" type="string" use="required" />
+				<attribute name="conditionUnits" type="string" use="required" />
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="dataSerie">
+		<sequence>
+			<element name="conditionValues" type="string" />
+			<element name="measurements" type="string" />
+		</sequence>
+	</complexType>
+	<complexType name="constantConditions">
+		<sequence>
+			<element name="constantCondition" type="tns:constantCondition"
+				minOccurs="0" maxOccurs="unbounded"
+				/>
+		</sequence>
+	</complexType>
+	<complexType name="constantCondition">
+		<attribute name="condition" type="string" use="required" />
+		<attribute name="conditionValue" type="string" use="required" />
+		<attribute name="conditionUnits" type="string" use="required" />
+	</complexType>
+</schema>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE index
+PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Index Version 1.0//EN"
+"http://java.sun.com/products/javahelp/index_1_0.dtd">
+<index version="2.0">
+	<indexitem text="Help index" target="index"/>
+	<indexitem text="BEW - Main menu" target="mainMenu"/>
+	<indexitem text="BEW - Create IntraExperiment" target="createIntra"/>
+	<indexitem text="BEW - Edit IntraExperiment" target="editIntra"/>
+	<indexitem text="BEW - Delete IntraExperiment" target="deleteIntra"/>
+	<indexitem text="BEW - Display IntraExperiment" target="displayIntra"/>
+	<indexitem text="BEW - Save Experiment" target="saveExp"/>
+	<indexitem text="BEW - Load Experiment" target="loadExp"/>
+	<indexitem text="BEW - Export Experiment" target="exportExp"/>
+	<indexitem text="BEW - Import Experiment" target="importExp"/>
+	<indexitem text="BEW - Add Method" target="addMethod"/>
+	<indexitem text="BEW - Edit Method" target="editMethod"/>
+	<indexitem text="BEW - Delete Method" target="deleteMethod"/>
+	<indexitem text="BEW - Display Method" target="displayMethod"/>
+	<indexitem text="BEW - Display DataSerie" target="displayDS"/>
+	<indexitem text="BEW - Display Method Condition" target="displayMethodCond"/>
+	<indexitem text="BEW - Create Plot" target="createPlot"/>
+	<indexitem text="BEW - Edit Plot" target="editPlot"/>
+	<indexitem text="BEW - Delete Plot" target="deletePlot"/>
+	<indexitem text="BEW - Display Plot" target="displayPlot"/>
+	<indexitem text="BEW - Save Plot" target="savePlot"/>
+	<indexitem text="BEW - Print Plot" target="printPlot"/>
+	<indexitem text="BEW - Calculate Test" target="createTest"/>
+	<indexitem text="BEW - Delete Test" target="deleteTest"/>
+	<indexitem text="BEW - Display Test" target="displayTest"/>
+	<indexitem text="BEW - Save Test" target="saveTest"/>
+	<indexitem text="BEW - IntraExperiments comparison" target="compareIntra"/>
+	<indexitem text="BEW - Add Condition" target="addCond"/>
+	<indexitem text="BEW - Add Condition value" target="addCondValue"/>
+	<indexitem text="BEW - Manage Methods of analysis" target="manageMethods"/>
+	<indexitem text="BEW - Update Methods and Conditions from BiofOmics" target="updateBio"/>	
+	<indexitem text="BEW - Update R packages" target="updateR"/>
+	<indexitem text="BEW - Download Experiment from BiofOmics" target="downloadExp"/>
+	<indexitem text="BEW - Upload Experiment to BiofOmics" target="uploadExp"/>
+	<indexitem text="BEW - Generate HTML report" target="generateReport"/>
+	<indexitem text="BEW - Help" target="help"/>
+	<indexitem text="BEW - About" target="about"/>
+	<indexitem text="BEW - XLS structure" target="xls"/>
+</index>

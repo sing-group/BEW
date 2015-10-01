@@ -1,0 +1,91 @@
+<project default="compile" >
+	<property name="plugins-bin" location="./plugins_bin"/>
+	<property name="plugins-src" location="./plugins_src"/>
+	<property name="lib" location="./lib"/>
+	<property name="dist"	location="./dist"/>
+	<property name="bin" location="./bin"/>
+	<property name="plugins-suffix" value="plugin"/> <!-- change it if you want, but do not set it to "" ! -->
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+	  <classpath>
+	    <pathelement location="./ant/ant-contrib.jar"/>
+	  </classpath>
+	</taskdef>
+
+
+	<target name="compile">
+		<path id="sources_dirs">
+			<dirset dir="${plugins-src}">
+				<include name="*/"/>
+			</dirset>
+		</path>
+
+		<!-- iterates over all plugins in plugins-src -->
+		<mkdir dir="${plugins-bin}/temp__/"/>
+		<for param="file">
+			<path>
+				<dirset dir="${plugins-src}" includes="*" />
+			</path>
+			<sequential>
+				<!-- convert absolute plugin-src paths to the plugin name in fileflatten_@{file} property -->
+				<pathconvert property="fileflatten_@{file}">
+					<path path="@{file}"/>
+					<mapper>
+						<flattenmapper/>
+					</mapper>
+				</pathconvert> 
+
+				<!-- compile plugin with all dependent clases also compiled in other plugins in temp__ -->
+				<javac 
+					srcdir="${plugins-src}/${fileflatten_@{file}}" destdir="${plugins-bin}/temp__" 
+					sourcepathref="sources_dirs"
+					includeAntRuntime="false"
+				>
+					<classpath>
+						<fileset dir="${plugins-bin}" includes="*.jar"/>
+						<fileset dir="${lib}" includes="*.jar"/>
+						<fileset dir="${plugins-src}/${fileflatten_@{file}}" includes="*.jar"/>
+					</classpath>
+				</javac>
+
+				<!-- now compile only the plugin classes in his destiny path -->
+				<mkdir dir="${plugins-bin}/${fileflatten_@{file}}"/>
+				<javac
+					srcdir="${plugins-src}/${fileflatten_@{file}}" 
+					destdir="${plugins-bin}/${fileflatten_@{file}}"
+					includeAntRuntime="false"
+				>
+					<classpath>
+						<fileset dir="${plugins-bin}" includes="*.jar"/>
+						<fileset dir="${lib}" includes="*.jar"/>
+						<dirset dir="${plugins-bin}" includes="temp__"/>
+						<fileset dir="${plugins-src}/${fileflatten_@{file}}" includes="*.jar"/>
+					</classpath>
+				</javac>
+				
+				<!-- copies the plugin.xml and other files -->
+				<copy todir="${plugins-bin}/${fileflatten_@{file}}">
+					<fileset dir="${plugins-src}/${fileflatten_@{file}}" includes="**/*" excludes="**/*.java"/>
+				</copy>
+			</sequential>
+		</for>
+		<delete dir="${plugins-bin}/temp__"/>
+	</target>
+
+	<target name="clean">
+		<for param="file">
+			<path>
+				<dirset dir="${plugins-src}" includes="*/"/>
+			</path>
+			<sequential>
+				<pathconvert property="fileflatten_@{file}" targetos="unix">
+					<path path="@{file}"/>
+					<mapper>
+						<flattenmapper/>
+					</mapper>
+				</pathconvert>
+				<delete dir="${plugins-bin}/${fileflatten_@{file}}"/>
+			</sequential>
+		</for>
+	</target>
+</project>

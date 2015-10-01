@@ -1,0 +1,15 @@
+XTT assay-2,3-Bis-(2-Methoxy-4-Nitro-5-Sulfophenyl)-2H-Tetrazolium-5-Carboxanilide	arbritary units (OD)
+DAPI-4',6-diamidino-2-phenylindole staining	total cells/cm2
+resazurin assay-7-Hydroxy-3H-phenoxazin-3-one 10-oxide staining	arbritary units (OD)
+biomass weight	
+CFU-colony-forming unit	???
+CV-cristal violet assay	g/cm2 or arbritary units (OD)
+FISH -fluorescence in situ hybridization	???
+mass transfer coefficient	m/s
+MBEC-minimum biofilm eliminating concentration	g/l
+MIC-minimum inhibitory concentration	g/l
+polysaccharide quantification	g/cm2
+protein quantification	g/cm2
+TC-total countable cells	total Cells/m2
+velocity profile	m/s
+VSS-volatile suspended solids	g/cm2

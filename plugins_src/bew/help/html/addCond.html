@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>BEW - Manage Conditions</title>
+</head>
+<body>
+	<h3>
+		<a id="addCond" title="addCond">4.1 Manage Conditions</a>
+	</h3>
+	<div id="conditionsExplanation">
+	    <p>
+	        Bew operation is supported by metadata supplied by the biofilms community repository <a href="http://biofomics.org">BiofOmics</a>.
+	        Metadata includes the controlled vocabulary on the experimental methods of analysis, and different kinds
+	        of experimental conditions (e.g. adhesion materials, culturing media and antimicrobial products).
+	    </p>
+	    <p>
+	        Besides, granting access to these metadata, BEW allows the user to add new metadata.
+	        Currently, the user may create 3 types of conditions:
+	    </p>
+	    <ul>
+	        <li><b><i>Numeric</i></b>: These conditions require the introduction of a
+	            name for the Condition in its text box as shown in the following image.
+	            <p class="centered">
+	                <img alt="Numerical" src="imgs/numerical.png"/>
+	            </p>
+	        </li>
+	        <li><b><i>Nominal</i></b>: These conditions imply the specification of a set of values, one by one.
+	            <p class="centered">
+	                <img alt="Nominal" src="imgs/nominal.png"/>
+	            </p>
+	        </li>
+	        <li><b><i>Metacondition</i></b>: This is a special type of condition that results from the combination of values from pre-existing and individual conditions.
+	            For example, the user may create a metacondition specifying a pre-defined medium supplemented with a given substance.
+	            <p class="centered">
+	                <img alt="Metacondition" src="imgs/introMeta.png"/>
+	            </p>
+	        </li>
+	    </ul>
+	    <div>
+	        <p>
+	            With this operation the user can add a new condition to the
+	            program files for use in future creations of experiments. When
+	            user click on this operation, the program opens a window like the
+	            one shown below:
+	        </p>
+	        <div class="centered">
+	            <p>
+	                <img alt="addCond" src="imgs/addCond.png"/>
+	            </p>
+	        </div>
+	        <p>
+	            Initially the user has the area Introduces Condition to indicate the name of the new condition and the type. The type
+	            of condition can be two fold:
+	        </p>
+	        <ul>
+	            <li><b><i>Numerical</i></b>:
+	                <p>
+	                    For example the temperature, it can takes from 0 to
+	                    infinity.
+	                </p> 
+	                <div class="centered">
+	                    <p>
+	                        <img alt="introNumerical" src="imgs/introNumerical.png" class="small"/>
+	                    </p>
+	                </div>
+	            </li>
+	            <li><b><i>Nominal</i></b>:
+	                <p>For example, a set of antimicrobials.</p> 
+	                <div class="centered">
+	                    <p>
+	                        <img alt="introNominal" src="imgs/introNominal.png"/>
+	                    </p>
+	                </div>
+	            </li>
+	        </ul>
+	        <p>
+	            If the user indicates that the condition is numerical he
+	            does not have to do anything else. On the other hand, if the user
+	            indicates that the condition is nominal, the program creates
+	            another area in the dialogue.
+	        </p>
+	        <p>
+	            Here, the user must indicate the values that have this
+	            condition. The user can create an empty nominal condition and
+	            include these values at a later stage, the operation of <a href="#addCondValues">Add
+	                condition values</a>. The button New Condition
+	            value is used to enter the value. Then, the user has to
+	            write the value of the condition in the text box.
+	        </p>
+	        <p>
+	            Once the user finishes creating conditions must press the
+	            Finish button to accept changes.
+	        </p>
+	        <p>
+	            Note: when using the condition and condition values created
+	            from these operations, they are displayed between **. This is
+	            because they are condition and condition values that are not
+	            validated by a curator.
+	        </p>
+	    </div>
+	</div>
+	<hr width="50%">
+
+	<a href="index.html">Return to the index page</a>
+</body>
+</html>

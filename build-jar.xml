@@ -1,0 +1,25 @@
+<!--
+    This ANT file helps you to create jar with one plugin
+-->
+<project default="build-jar">
+	<property name="version" value="0.1"/> <!-- Put a version if you want -->
+  
+
+  	<target name="build-jar">
+			
+		<!-- Build the jar-->
+		<jar destfile="sampleplugin-${version}.jar">
+		  	<fileset dir="plugins_bin/sampleplugin" includes="**/*"/>
+
+			<manifest>
+				<attribute name="Main-Class" value="es.uvigo.ei.aibench.Launcher"/>
+			   <!-- If you need some extra jars that must be placed in the same folder where your plugin jar goes -->
+			   <!-- <attribute name="Class-Path" value="genecbr-bsh.jar"/> -->
+				   
+				<attribute name="Built-By" value="${user.name}"/>
+			</manifest>
+
+		</jar>
+
+  	</target>
+</project>

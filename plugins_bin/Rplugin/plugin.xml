@@ -1,0 +1,88 @@
+<plugin start="true">
+	<uid>sing.Rplugin</uid>
+	<name>R Bridge for AIBench</name>
+	<version>1.0</version>
+	
+	<lifecycleclass>es.uvigo.ei.sing.r.Lifecycle</lifecycleclass>
+
+	<!-- DEPENCENCIES: If you need classes from other plugins, you need a dependency! NOTE: If you need classes from plugins that you extend (for example, the core) you don't need to put the dependency. NOTE: This dependency is a sample. If you uncomment the following lines the plugin will fail! -->
+
+	<dependencies>
+		<!--<dependency uid="sing.datatypes"/>  --> 		
+	</dependencies>
+
+
+	<!-- EXTENSIONS: The extensions that this plugin is connected to -->
+	<extensions>	
+<!-- 		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.r.Data2DataFrame"> -->
+<!-- 			<operation-description name="Create R data.frame" path="1@Data/Transformations" uid= "sing.r.data2dataframe"/> -->
+<!-- 		</extension> -->
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" > 
+			<component slotid="bottom" componentid="sing.Rconsole" name="R Console" class="es.uvigo.ei.sing.r.RConsole"/> 
+		</extension> 
+<!-- 		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.r.plot.CreateImage"> -->
+<!-- 			<operation-description name="Create image" path="0@Funster" uid= "funster.createimage"/> -->
+<!-- 		</extension> -->
+	
+ 		<extension uid="aibench.workbench" name="aibench.workbench.view" > 
+ 			<view name="Image View" datatype="es.uvigo.ei.sing.r.plot.RImage" class="es.uvigo.ei.sing.r.plot.RImageViewer"/>		 
+		</extension>
+		
+
+	<!-- ========================= EXAMPLES ======================================= -->
+		
+		<!-- CORE EXTENSION SAMPLES: Operations, Datatypes... -->
+
+		<!-- "Transformers". A transformer definition tells AIBench that you have a method to convert a instance from one class to an instance of another class -->
+		<!-- 
+		<extension uid="aibench.core" name="aibench.core.transformer-definition">
+			<transformer-description 
+				sourceType="java.lang.String" 
+				destinyType="es.uvigo.ei.sing.aibench.shell.DummyDataType" 
+				transformerClass="es.uvigo.ei.sing.aibench.shell.Transformer"
+				methodName="transform"
+				/>
+	    </extension>
+	    -->
+
+		<!-- WORKBENCH EXTENSION SAMPLES (GUI related) -->
+		
+		<!-- Workbench extensions (GUI related) -->
+		
+		<!-- "Datatype Viewers". Map a class (datatype) to a viewer (JComponent). Remember: This JComponent must have a constructor taking the datatype instance -->
+		<!--
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<view name="Sample Datatype View" datatype="sampleplugin.OneClass" class="sampleplugin.OneViewComponent"/>		
+		</extension>
+		-->
+		
+		<!-- "Custom icons" -->
+		<!--
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<icon-operation operation="sampleplugin.sumoperationid" icon="icons/oneicon.png"/>
+			<icon-datatype datatype="sampleplugin.OneClass" icon="icons/othericon.png"/> 
+		</extension>
+		-->
+		
+		<!-- "Custom input dialogs". If you don't like the default generated input dialog for some operation, put your own here -->
+		<!--
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation  operation="org.myorg.myoperationid" class="org.myorg.MyComponent"/>
+		</extension>
+		-->
+		
+		<!--"Custom components". Components displayed in the main window. You can choose where to place it
+			using the slotid tag, so please see the /conf/template.xml file to know which slots are available
+			The component is any JComponent -->
+		<!--
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<component slotid="bottom" componentid="aibench.shell.shellWindow" name="AIBench Shell" class="es.uvigo.ei.sing.aibench.shell.ShellComponent"/>
+		</extension>
+		-->
+		
+
+
+	</extensions>
+
+</plugin>

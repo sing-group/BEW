@@ -1,0 +1,334 @@
+<plugin start="true">
+	<uid>bew</uid>
+	<name>BEW</name>
+	   <version>1.0</version>
+	<lifecycleclass>es.uvigo.ei.sing.bew.util.Lifecycle</lifecycleclass>
+	   <!-- lifecycle class. Used to detect when the plugin is started. The class should inherit from org.platonos.pluginengine.PluginLifecycle-->
+	   <!-- <lifecycleclass>mylifecycleclass</lifecycleclass> -->
+
+	<!-- DEPENCENCIES: If you need classes from other plugins, you need a dependency! NOTE: If you need classes from plugins that you extend (for example, the core) you don't need to put the dependency. NOTE: This dependency is a sample. If you uncomment the following lines the plugin will fail! -->
+
+	<dependencies>
+		<dependency uid="sing.Rplugin"/> 
+	</dependencies>
+
+	<!-- EXTENSIONS: The extensions that this plugin is connected to -->
+	<extensions>
+
+		<!-- EXTENSION 2: A sample operation, extending the core. Please note: you can put as many operations as you wish: one extension per operation -->
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.CreateExperiment">
+			<operation-description name="New experiment" path="1@File" uid= "bew.createExperiment" shortcut="1" />
+		</extension>
+
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.OpenExperiment">
+			<operation-description name="Open experiment" path="2@File" uid= "bew.openExperiment" shortcut="2"/>
+		</extension>
+						
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.SaveExperimentOperation">
+			<operation-description name="Save experiment" path="3@File" uid= "bew.saveExperimentOperation" shortcut="3"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.ImportExperiment">
+			<operation-description name="Import experiment" path="4@File" uid= "bew.importExperiment" shortcut="99"/>
+		</extension>
+						
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.ExportExperimentOperation">
+			<operation-description name="Export experiment" path="5@File" uid= "bew.exportExperimentOperation" shortcut="99"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.DownloadExperimentOperation">
+			<operation-description name="Download experiment" path="1@BiofOmics" uid= "bew.downloadExperimentOperation" shortcut="99"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.UploadExperimentOperation">
+			<operation-description name="Upload experiment" path="2@BiofOmics" uid= "bew.uploadExperimentOperation" shortcut="99"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.ManageConditionOperation">
+			<operation-description name="Manage BEW Conditions" path="1@Utilities" uid= "bew.manageConditionOperation" shortcut="99"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.ManageConditionValuesOperation">
+			<operation-description name="Manage BEW Condition values" path="2@Utilities" uid= "bew.manageCondValues" shortcut="99"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.ManageMethodsOperation">
+			<operation-description name="Manage BEW Methods of analysis" path="3@Utilities" uid= "bew.manageMethods" shortcut="99"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.UpdateMetadataOperation">
+			<operation-description name="Update Metatada from BioFomics" path="4@Utilities" uid= "bew.updateMetadataOperation" shortcut="99"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.EditExperiment">
+			<operation-description name="Edit experiment" path="4@Experiment" uid= "bew.editExperiment" shortcut="4"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.AddMethodToExperiment">
+			<operation-description name="Add Method" path="1@Experiment" uid= "bew.addMethodToExperiment" shortcut="5"/>
+		</extension>
+
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.EditMethod">
+			<operation-description name="Edit method" path="3@Experiment" uid= "bew.editMethod" shortcut="6"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.CreateGraphic">
+			<operation-description name="Plots" path="1@Analysis" uid= "bew.createGraphic" shortcut="7"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.CreateStatistic">
+			<operation-description name="Statistics" path="2@Analysis" uid= "bew.createStatistic" shortcut="8"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.CompareExperiments">
+			<operation-description name="Inter-lab Comparison" path="4@Experiment" uid= "bew.compareExperiments" shortcut="9"/>
+		</extension>
+		
+		<extension uid="aibench.core" name="aibench.core.operation-definition" class="es.uvigo.ei.sing.bew.operations.ReportingOperation">
+			<operation-description name="HTML report" path="1@Reporting" uid= "bew.reportingOperation" shortcut="10"/>
+		</extension>
+	
+	<!-- ========================= EXAMPLES ======================================= -->
+		
+		<!-- CORE EXTENSION SAMPLES: Operations, Datatypes... -->
+
+		<!-- "Transformers". A transformer definition tells AIBench that you have a method to convert a instance from one class to an instance of another class -->
+		<!-- 
+		<extension uid="aibench.core" name="aibench.core.transformer-definition">
+			<transformer-description 
+				sourceType="java.lang.String" 
+				destinyType="es.uvigo.ei.sing.aibench.shell.DummyDataType" 
+				transformerClass="es.uvigo.ei.sing.aibench.shell.Transformer"
+				methodName="transform"
+				/>
+	    </extension>
+	    -->
+
+		<!-- WORKBENCH EXTENSION SAMPLES (GUI related) -->
+		
+		<!-- Workbench extensions (GUI related) -->
+		
+		<!-- "Datatype Viewers". Map a class (datatype) to a viewer (JComponent). Remember: This JComponent must have a constructor taking the datatype instance -->
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<view name="IntraExperiment Viewer" datatype="es.uvigo.ei.sing.bew.model.Experiment" class="es.uvigo.ei.sing.bew.model.views.IntraExperimentView" help="view.sampleplugin.oneclass"/>		
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<view name="InterExperiment Viewer" datatype="es.uvigo.ei.sing.bew.model.InterLabExperiment" class="es.uvigo.ei.sing.bew.model.views.InterExperimentView" help="view.sampleplugin.oneclass"/>		
+		</extension>
+				
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<view name="Method Viewer" datatype="es.uvigo.ei.sing.bew.model.Method" class="es.uvigo.ei.sing.bew.model.views.MethodView" help="view.sampleplugin.oneclass"/>		
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<view name="DataSeries Viewer" datatype="es.uvigo.ei.sing.bew.model.DataSeries" class="es.uvigo.ei.sing.bew.model.views.DataSerieView" help="view.sampleplugin.oneclass"/>		
+		</extension>
+
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<view name="Condition Viewer" datatype="es.uvigo.ei.sing.bew.model.Condition" class="es.uvigo.ei.sing.bew.model.views.ConditionView" help="view.sampleplugin.oneclass"/>		
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<view name="Constant Condition Viewer" datatype="es.uvigo.ei.sing.bew.model.ConstantConditions" class="es.uvigo.ei.sing.bew.model.views.ConstantConditionView" help="view.sampleplugin.oneclass"/>		
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<view name="Graphic Viewer" datatype="es.uvigo.ei.sing.bew.model.Plot" class="es.uvigo.ei.sing.bew.model.views.PlotView" help="view.sampleplugin.oneclass"/>		
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<view name="Statistic Viewer" datatype="es.uvigo.ei.sing.bew.model.Statistic" class="es.uvigo.ei.sing.bew.model.views.StatisticView" help="view.sampleplugin.oneclass"/>		
+		</extension>
+		
+		<!-- "Custom icons" -->
+		<!--
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<icon-operation operation="sampleplugin.sumoperationid" icon="icons/oneicon.png"/>
+			<big-icon-operation	operation="sampleplugin.sumoperationid" icon="icons/onebigicon.png"/>
+			<icon-datatype datatype="sampleplugin.OneClass" icon="icons/othericon.png"/> 
+		</extension>
+		-->		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+            <icon-datatype datatype="es.uvigo.ei.sing.bew.model.Experiment" icon="img/experiment.png"/>
+            <icon-datatype datatype="es.uvigo.ei.sing.bew.model.InterLabExperiment" icon="img/interExperiment.png"/>
+            <icon-datatype datatype="es.uvigo.ei.sing.bew.model.Methods" icon="img/greenFolder.png"/>
+            <icon-datatype datatype="es.uvigo.ei.sing.bew.model.Method" icon="img/method.png"/>
+            <icon-datatype datatype="es.uvigo.ei.sing.bew.model.Plot" icon="img/modelPlot.png"/>
+            <icon-datatype datatype="es.uvigo.ei.sing.bew.model.Statistic" icon="img/statistic.png"/>  
+            
+            <icon-operation operation="bew.createExperiment" icon="img/newExperiment.png"/>
+            <icon-operation operation="bew.openExperiment" icon="img/load.png"/>
+            <icon-operation operation="bew.saveExperimentOperation" icon="img/save.png"/>
+            <icon-operation operation="bew.importExperiment" icon="img/import.png"/>
+            <icon-operation operation="bew.exportExperimentOperation" icon="img/export.png"/>
+            <icon-operation operation="bew.addMethodToExperiment" icon="img/newMethod.png"/>
+            <icon-operation operation="bew.editMethod" icon="img/editMethod.png"/>
+            <icon-operation operation="bew.editExperiment" icon="img/editExperiment.png"/>
+            <icon-operation operation="bew.createGraphic" icon="img/plot.png"/>
+            <icon-operation operation="bew.createStatistic" icon="img/newStatistic.png"/>
+            <icon-operation operation="bew.compareExperiments" icon="img/compare.png"/>
+            <icon-operation operation="bew.reportingOperation" icon="img/reporting.png"/>
+            <icon-operation operation="bew.downloadExperimentOperation" icon="img/download.png"/>
+            <icon-operation operation="bew.uploadExperimentOperation" icon="img/upload.png"/>
+            <icon-operation operation="bew.manageConditionOperation" icon="img/addCond.png"/>
+            <icon-operation operation="bew.manageCondValues" icon="img/addCondValue.png"/>
+            <icon-operation operation="bew.manageMethods" icon="img/manageMethod.png"/>
+            <icon-operation operation="bew.updateMetadataOperation" icon="img/udpateMeta.png"/>
+        </extension>
+		
+		
+		<!-- "Custom input dialogs". If you don't like the default generated input dialog for some operation, put your own here -->
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.openExperiment" class="es.uvigo.ei.sing.bew.gui.OpenExpGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.importExperiment" class="es.uvigo.ei.sing.bew.gui.ImportExpGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.createExperiment" class="es.uvigo.ei.sing.bew.gui.CreateExpGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.createGraphic" class="es.uvigo.ei.sing.bew.gui.SelectPlotGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.createStatistic" class="es.uvigo.ei.sing.bew.gui.SelectStatisticGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.compareExperiments" class="es.uvigo.ei.sing.bew.gui.SelectExperimentsDialogGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.editMethod" class="es.uvigo.ei.sing.bew.gui.SelectExpAndMethodGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.addMethodToExperiment" class="es.uvigo.ei.sing.bew.gui.AddMethodGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.reportingOperation" class="es.uvigo.ei.sing.bew.gui.ReportingGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.manageConditionOperation" class="es.uvigo.ei.sing.bew.gui.ManageConditionGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.manageCondValues" class="es.uvigo.ei.sing.bew.gui.ManageConditionValuesGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.manageMethods" class="es.uvigo.ei.sing.bew.gui.ManageMethodsGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.downloadExperimentOperation" class="es.uvigo.ei.sing.bew.gui.DownloadExpGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.uploadExperimentOperation" class="es.uvigo.ei.sing.bew.gui.UploadExpGUI"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<gui-operation operation="bew.updateMetadataOperation" class="es.uvigo.ei.sing.bew.gui.UpdateMetadataGUI"/>
+		</extension>
+		
+		<!-- "Custom operation visibility". By default, all operations are displayed everywhere (main menu, popup menu and dialogs). But if you want to change this behaviour, use this option.
+		The current available options are (you can put more than one, separated with spaces)
+		  MENU - the operation can be accessed from the main menu
+		  POPUP - the operation can be accessed from the popup menu showed in the trees
+		  DIALOG - the operation can be accessed from dialogs
+		  TOOLBAR - the operation can be accessed from the toolbar
+		  NONE - the operation is hidden in the GUI  
+		-->
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.createExperiment" visibility="MENU TOOLBAR"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.openExperiment" visibility="MENU TOOLBAR"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.saveExperimentOperation" visibility="MENU TOOLBAR"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.importExperiment" visibility="MENU"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.exportExperimentOperation" visibility="MENU"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.downloadExperimentOperation" visibility="MENU"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.uploadExperimentOperation" visibility="MENU"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.manageConditionOperation" visibility="MENU"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.manageCondValues" visibility="MENU"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.manageMethods" visibility="MENU"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.updateMetadataOperation" visibility="MENU"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.editExperiment" visibility="MENU TOOLBAR"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.addMethodToExperiment" visibility="MENU TOOLBAR"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.editMethod" visibility="MENU TOOLBAR"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.createGraphic" visibility="MENU TOOLBAR"/>
+		</extension>
+		
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.createStatistic" visibility="MENU TOOLBAR"/>
+		</extension>
+		
+				<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.compareExperiments" visibility="MENU TOOLBAR"/>
+		</extension>
+		
+				<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<operation-visibility operation="bew.reportingOperation" visibility="MENU TOOLBAR"/>
+		</extension>
+		
+		<!-- "Custom components". Components displayed in the main window. You can choose where to place it
+			using the slotid tag, so please see the /conf/template.xml file to know which slots are available
+			The component is any JComponent -->
+		<!--
+		<extension uid="aibench.workbench" name="aibench.workbench.view" >
+			<component slotid="bottom" componentid="aibench.shell.shellWindow" name="AIBench Shell" class="es.uvigo.ei.sing.aibench.shell.ShellComponent"/>
+		</extension>
+		-->
+	</extensions>
+
+</plugin>

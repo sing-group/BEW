@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<toc version="2.0">
+   <tocitem text="Help index" target="index">
+      <tocitem text="BEW - Main menu" target="mainMenu"/>
+      <tocitem text="BEW - Create IntraExperiment" target="createIntra"/>
+      <tocitem text="BEW - Edit IntraExperiment" target="editIntra"/>
+      <tocitem text="BEW - Delete IntraExperiment" target="deleteIntra"/>
+      <tocitem text="BEW - Display IntraExperiment" target="displayIntra"/>
+      <tocitem text="BEW - Save Experiment" target="saveExp"/>
+      <tocitem text="BEW - Load Experiment" target="loadExp"/>
+      <tocitem text="BEW - Export Experiment" target="exportExp"/>
+      <tocitem text="BEW - Import Experiment" target="importExp"/>
+      <tocitem text="BEW - Add Method" target="addMethod"/>
+      <tocitem text="BEW - Edit Method" target="editMethod"/>
+      <tocitem text="BEW - Delete Method" target="deleteMethod"/>
+      <tocitem text="BEW - Display Method" target="displayMethod"/>
+      <tocitem text="BEW - Display DataSerie" target="displayDS"/>
+      <tocitem text="BEW - Display Method Condition" target="displayMethodCond"/>
+      <tocitem text="BEW - Create Plot" target="createPlot"/>
+      <tocitem text="BEW - Edit Plot" target="editPlot"/>
+      <tocitem text="BEW - Delete Plot" target="deletePlot"/>
+      <tocitem text="BEW - Display Plot" target="displayPlot"/>
+      <tocitem text="BEW - Save Plot" target="savePlot"/>
+      <tocitem text="BEW - Print Plot" target="printPlot"/>
+      <tocitem text="BEW - Calculate Test" target="createTest"/>
+      <tocitem text="BEW - Delete Test" target="deleteTest"/>
+      <tocitem text="BEW - Display Test" target="displayTest"/>
+      <tocitem text="BEW - Save Test" target="saveTest"/>
+      <tocitem text="BEW - IntraExperiments comparison" target="compareIntra"/>
+      <tocitem text="BEW - Add Condition" target="addCond"/>
+      <tocitem text="BEW - Add Condition value" target="addCondValue"/>
+      <tocitem text="BEW - Manage Methods of analysis" target="manageMethods"/>
+      <tocitem text="BEW - Update Methods and Conditions from BiofOmics" target="updateBio"/>
+      <tocitem text="BEW - Update R packages" target="updateR"/>
+      <tocitem text="BEW - Download Experiment from BiofOmics" target="downloadExp"/>
+      <tocitem text="BEW - Upload Experiment to BiofOmics" target="uploadExp"/>
+      <tocitem text="BEW - Generate HTML report" target="generateReport"/>
+      <tocitem text="BEW - Help" target="help"/>
+      <tocitem text="BEW - About" target="about"/>
+      <tocitem text="BEW - XLS structure" target="xls"/>
+   </tocitem>
+</toc>

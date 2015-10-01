@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>BEW - Create Experiment</title>
+</head>
+<body>
+	<h3>
+        <a id="newExperiment" title="newExperiment">1.2 Create an
+            Experiment</a>
+    </h3>
+    <div id="intro">
+        <p>	
+            In BEW, the user can create a new Experiment with any number of experimental conditions and including data from several methods of analysis 
+            . This process is carried out through multiple
+            dialogues orchestrated as a stepwise Wizard.
+        </p>
+    </div>
+    <hr />
+    <div id="firstWindow">
+        <h4>First Window - Experiment profile and Constant Conditions</h4>
+        <p>
+            At start, the user needs to cover
+            the basic information of the experiment
+            (also called Setup page), shown in
+            the image below:
+        </p>
+        <div class="centered">
+            <p>
+                <img alt="wizardSetup" src="imgs/wizardSetup.png"/>
+            </p>
+        </div>
+        <p>Here, there are 2 areas of information:</p>
+        <ol>
+            <li><strong><dfn>Basic information</dfn></strong>
+                <p>The user must fill in 3 mandatory fields: name of the experiment, name of the institution where it was conducted and
+                    email of contact. Additional information about the authors, date of execution and associated publication are welcome.
+                </p></li>
+            <li><strong><dfn>Constant conditions</dfn></strong>
+                <p>
+                    Constant conditions are conditions that are considered by all the methods of analysis applied.
+                </p>
+                <p>The user should click on the button 'New
+                    Condition', which creates a new condition statment (row in the table).
+                    The user should then fill in all new rows (cells in red are uncovered),
+                    indicating in the column "Condition name" the name of the experimental condition,
+                    in the column "Condition value" the value for this condition, and
+                    in the column "Units" the units of measure (if applicable).</p>
+            </li>
+        </ol>
+    </div>
+    <div id="bottomButtons">
+        <h4>The bottom options</h4>
+        <p> The buttons at the bottom of the main window are explained below:</p>
+        <div class="centered">
+            <p>
+                <img alt="wizardButtons" src="imgs/wizardButtons.png"/>
+            </p>
+        </div>
+        <ul>
+            <li><strong><dfn>Previous</dfn></strong>: To display the
+                previous page. The content of the window changes to a page
+                previously created, if it exists.</li>
+            <li><strong><dfn>Next</dfn></strong>: To display the
+                following page. The contents of the window changes to a new page
+                or to "Finalize"
+                button. In order to move to the next page, the current page must be
+                properly validated.</li>
+            <li><strong><dfn>Finalize</dfn></strong>: To create the
+                experiment with all the information inserted. This button is
+                available only when the user inserted a minimum set of information and is this is valid.
+            </li>
+            <li><strong><dfn>Add Method</dfn></strong>: Allows the user
+                to insert a page for a method of analysis.</li>
+            <li><strong><dfn>Validate</dfn></strong>: Allows the user to
+                validate the information provided in the current page. The
+                program verifies that the information is correct in terms of structure and metadata. If the
+                information is not correct, the program will prompt an error.</li>
+            <li><strong><dfn>Delete Page</dfn></strong>: Allows the user
+                to delete the current page. This is only possible for method pages, 
+                since the initial setup page cannot be deleted without deleting the whole experiment.
+                When the user deletes a page, the window changes,
+                and displays the previous one.</li>
+            <li><strong><dfn>Save As...</dfn></strong>: Saves the state
+                of the current experiment to a file, including the data associated to the methods of analysis. All 
+                pages must be properly validated. 
+            </li>
+            <li><strong><dfn>Exit</dfn></strong>: The user can exit the Wizard, having
+                completing or not the creation of the experiment. </li>
+        </ul>
+    </div>
+    <div id="secondWindow">
+        <h4>Second Window - Method page</h4>
+        <p>
+            Once the Setup page is covered, the user can decide to end the creation
+            of the experiment without adding any method of analysis for the time being. Otherwise, he should click on "Add Method" button
+            to access the method creation window (or method
+            page). 
+        </p>
+        <div class="centered">
+            <p>
+                <img alt="wizardMethod" src="imgs/wizardMethod.png"/>
+            </p>
+        </div>
+        <p>The window is divided into 3 areas of information:</p>
+        <ol>
+            <li><strong><dfn>Method of analysis</dfn></strong>
+                <p>
+                    The user must select the method from the list provided by BEW whilst it may be manually extended (see <a href="#manageMethods">manage methods section</a>) by the user. 
+                    In addition,
+                    the user can specify the units of measure that are
+                    associated to the analysis (if applicable).
+                </p>
+            </li>
+            <li><strong><dfn>Conditions in test</dfn></strong>:
+                <p>
+                    The user has to indicate the number of conditions tested by the
+                    method of analysis and press the "Add" button. This will create the corresponding table. The table should has 
+                    as many conditions are created in the table as the previously selected number are created.
+                </p>
+                <p>Now, the user must specify the name of the conditions. This
+                    is done by clicking on the first column of the table.</p>
+                <p>Similarly, should indicate the number of values for each
+                    condition. Keep in mind that the program manages hierarchical (tree-alike) data structures. 
+                </p>
+                <p>The user should also specify the units of measure of
+                    created condition (wherever applicable).</p>
+                <p>Finally, he should click on
+                    "Create data table" to create the data table.</p> 
+                <div class="centered">
+                    <p>
+                        <img alt="wizardMethod2" src="imgs/wizardMethod2.png"/>
+                    </p>
+                </div>
+            </li>
+            <li><strong><dfn>Data</dfn></strong>:
+                <p>
+                    After the user specifies the number of conditions and the condition values to be considered, 
+                    BEW automatically creates the data table.
+                    Then, the user has to
+                    fill in the cells in green. BEW provides controlled vocabulary for several commom test conditions,
+                    but the user may also create conditions of his own (see vocabulary management section).
+                </p>
+                <p>
+                    The user can introduce experimental data by clicking on "New replicate". 
+                </p> 
+                <div class="centered">
+                    <p>
+                        <img alt="wizardMethod3" src="imgs/wizardMethod3.png"/>
+                    </p>
+                </div>
+            </li>
+        </ol>
+        <p>
+            Once data insertion is completed, the user can check that all the values are correct (in form and structure)
+            using the "Validate" button. If succeeded, the user is presented with two
+            options: finalize the experiment or
+            keep adding pages for methods of analysis.
+        </p>
+    </div>
+	<hr width="50%">
+
+	<a href="index.html">Return to the index page</a>
+</body>
+</html>
